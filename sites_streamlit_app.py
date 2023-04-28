@@ -13,7 +13,8 @@ streamlit.text('🍲 Traditional food')
 streamlit.header('🏖️ Choose your holiday destination ⛵')
 
 #import pandas
-my_country_list=pandas.read_csv("https://github.com/ajturner/acetate/commit/7c22bfb99989e511726b0aa2cc4b4f7e7308699d")
+my_country_list=pandas.read_csv("https://github.com/ajturner/acetate/blob/master/places/Countries-Europe.csv")
+
 my_country_list=my_fruit_list.set_index('name')
 
 countries_selected = streamlit.multiselect("Pick some fruits:", list(my_country_list.index),['France','Italy'])
