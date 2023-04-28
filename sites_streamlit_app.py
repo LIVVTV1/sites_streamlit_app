@@ -1,4 +1,4 @@
-import streamlit
+'''import streamlit
 import pandas
 import requests
 import snowflake.connector
@@ -20,3 +20,10 @@ my_country_list=my_fruit_list.set_index('name')
 
 countries_selected = streamlit.multiselect("Pick your destination:", list(my_country_list.index),['France','Italy'])
 countries_to_show = my_country_list.loc[countries_selected]
+'''
+
+import streamlit as st
+
+st.title('🎈 App Name')
+
+st.write('Hello world!')
