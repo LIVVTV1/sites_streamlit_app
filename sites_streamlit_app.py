@@ -24,7 +24,7 @@ countries_to_show = my_country_list.loc[countries_selected]
 
 import snowflake.connector
 import streamlit as st
-from snowflake.snowpark import Session
+#from snowflake.snowpark import Session
 
 st.title('❄️ How to connect Streamlit to a Snowflake database')
 
