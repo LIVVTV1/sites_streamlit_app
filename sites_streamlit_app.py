@@ -22,7 +22,7 @@ countries_selected = streamlit.multiselect("Pick your destination:", list(my_cou
 countries_to_show = my_country_list.loc[countries_selected]
 '''
 
-
+import snowflake.connector
 import streamlit as st
 from snowflake.snowpark import Session
 
