@@ -28,6 +28,8 @@ import streamlit as st
 
 st.title('❄️ How to connect Streamlit to a Snowflake database')
 
+
+'''
 # Establish Snowflake session
 @st.cache_resource
 def create_session():
@@ -35,6 +37,8 @@ def create_session():
 
 session = create_session()
 st.success("Connected to Snowflake!")
+'''
+
 
 # Load data table
 @st.cache_data
