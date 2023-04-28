@@ -22,8 +22,42 @@ countries_selected = streamlit.multiselect("Pick your destination:", list(my_cou
 countries_to_show = my_country_list.loc[countries_selected]
 '''
 
+
 import streamlit as st
+from snowflake.snowpark import Session
 
-st.title('🎈 App Name')
+st.title('❄️ How to connect Streamlit to a Snowflake database')
 
-st.write('Hello world!')
+# Establish Snowflake session
+@st.cache_resource
+def create_session():
+    return Session.builder.configs(st.secrets.snowflake).create()
+
+session = create_session()
+st.success("Connected to Snowflake!")
+
+# Load data table
+@st.cache_data
+def load_data(table_name):
+    ## Read in data table
+    st.write(f"Here's some example data from `{table_name}`:")
+    table = session.table(table_name)
+    
+    ## Do some computation on it
+    table = table.limit(100)
+    
+    ## Collect the results. This will run the query and download the data
+    table = table.collect()
+    return table
+
+# Select and display data table
+table_name = "DEMO_DB.PUBLIC.COUNTRIES"
+
+## Display data table
+with st.expander("See Table"):
+    df = load_data(table_name)
+    st.dataframe(df)
+
+## Writing out data
+for row in df:
+    st.write(f"{row[0]} has a :{row[1]}:")
