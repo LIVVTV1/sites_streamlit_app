@@ -14,7 +14,7 @@ streamlit.header('🏖️ Choose your holiday destination ⛵')
 
 #import pandas
 my_country_list=pandas.read_csv("./Countries-Europe.csv",header=None,encoding='utf-8')
-streamlit.dataframe(my_country_list)
+#streamlit.dataframe(my_country_list)
 
 #https://github.com/ajturner/acetate/blob/master/places/Countries-Europe.csv
 
