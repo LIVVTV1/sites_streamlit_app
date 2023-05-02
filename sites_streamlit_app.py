@@ -20,6 +20,6 @@ my_country_list=pandas.read_csv("./Countries-Europe.csv",encoding='utf-8')
 
 my_country_list=my_country_list.set_index('name')
 
-countries_selected = streamlit.multiselect("Pick your destination:", list(my_country_list.index),['France','Italy'])
+countries_selected = streamlit.multiselect("Pick your destination:", list(my_country_list.index),['France','Spain'])
 countries_to_show = my_country_list.loc[countries_selected]
 
