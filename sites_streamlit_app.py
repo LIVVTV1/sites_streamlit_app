@@ -18,7 +18,7 @@ streamlit.dataframe(my_country_list)
 
 #https://github.com/ajturner/acetate/blob/master/places/Countries-Europe.csv
 
-my_country_list=my_fruit_list.set_index('name')
+my_country_list=my_country_list.set_index('name')
 
 countries_selected = streamlit.multiselect("Pick your destination:", list(my_country_list.index),['France','Italy'])
 countries_to_show = my_country_list.loc[countries_selected]
