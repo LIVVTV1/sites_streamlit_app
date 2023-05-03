@@ -51,11 +51,10 @@ try:
     
     #take the json version of the response and normalize it
     #country_normalized = pandas.json_normalize(country_response.json())
-    #country_normalized = pandas.json_normalize(countries_json.json())
+    country_normalized = pandas.json_normalize(countries_json.json())
    
     # output in the screen as a table
-    countries_json_flattened = flatten_json(countries_json)
-    streamlit.dataframe(countries_json_flattened)
+    streamlit.dataframe(country_normalized)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
