@@ -50,20 +50,19 @@ try:
     streamlit.error("Please select a country to get information.")
   else:
     #import requests
-    #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    country_response = requests.get("./Countries-Europe_complete.json" + country_choice)
     #take the json version of the response and normalize it
-    #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    country_normalized = pandas.json_normalize(country_response.json())
     # output in the screen as a table
-    #streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(country_normalized)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
     
-    my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
-    my_country_list_all=my_country_list_all.set_index('name')
-
-   #countries_selected2 = streamlit.multiselect("Pick your destination:", list(my_country_list.index),['France','Spain'])
-    countries_to_show2 = my_country_list_all.loc[country_choice]
+    # OK my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
+    # OK my_country_list_all=my_country_list_all.set_index('name')
+    # OKcountries_to_show2 = my_country_list_all.loc[country_choice
+    
     streamlit.dataframe(countries_to_show2)
 except URLError as e:
     streamlit.error()
