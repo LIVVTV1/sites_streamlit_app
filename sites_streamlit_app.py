@@ -61,8 +61,8 @@ try:
     
     my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
   
-   countries_selected2 = streamlit.multiselect("Pick your destination:", list(my_country_list_all.index),['France','Spain'])
-   countries_to_show2 = my_country_list_all.loc[countries_selected]
-   streamlit.dataframe(countries_to_show2)
+    countries_selected2 = streamlit.multiselect("Pick your destination:", list(my_country_list_all.index),['France','Spain'])
+    countries_to_show2 = my_country_list_all.loc[countries_selected]
+    streamlit.dataframe(countries_to_show2)
 except URLError as e:
     streamlit.error()
