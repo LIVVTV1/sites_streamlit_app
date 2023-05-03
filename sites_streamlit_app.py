@@ -3,7 +3,6 @@ import pandas
 import requests
 import snowflake.connector
 import json
-from flatten_json import flatten
 from urllib.error import URLError
 
 streamlit.title('Best sites to visit')
