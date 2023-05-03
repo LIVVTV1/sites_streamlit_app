@@ -55,7 +55,7 @@ try:
     #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     # output in the screen as a table
     #streamlit.dataframe(fruityvice_normalized)
-    back_from_function=get_country_data(this_country_choice)
+    back_from_function=get_country_data(country_choice)
     streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()
