@@ -26,7 +26,7 @@ countries_to_show = my_country_list.loc[countries_selected]
 streamlit.dataframe(countries_to_show)
 
 
-
+'''
 #create function
 def get_country_data(country_choice):
   #country_response = requests.get("https://fruityvice.com/api/fruit/" + this_country_choice)
@@ -39,7 +39,7 @@ def get_country_data(country_choice):
   countries_to_show2 = my_country_list_all.loc[countries_selected]
 # Display the table on the page.
   return streamlit.dataframe(countries_to_show2)
-
+'''
 
   
 
@@ -56,7 +56,13 @@ try:
     # output in the screen as a table
     #streamlit.dataframe(fruityvice_normalized)
     
-    back_from_function=get_country_data(country_choice)
-    streamlit.dataframe(back_from_function)
+    #back_from_function=get_country_data(country_choice)
+    #streamlit.dataframe(back_from_function)
+    
+    my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
+  
+   countries_selected2 = streamlit.multiselect("Pick your destination:", list(my_country_list_all.index),['France','Spain'])
+   countries_to_show2 = my_country_list_all.loc[countries_selected]
+   streamlit.dataframe(countries_to_show2)
 except URLError as e:
     streamlit.error()
