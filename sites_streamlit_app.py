@@ -54,7 +54,7 @@ try:
     #country_normalized = pandas.json_normalize(countries_json.json())
    
     # output in the screen as a table
-    countries_json_flattened = [flatten(d) for d in countries_json]
+    countries_json_flattened = flatten_json(countries_json)
     streamlit.dataframe(countries_json_flattened)
     
     #back_from_function=get_country_data(country_choice)
