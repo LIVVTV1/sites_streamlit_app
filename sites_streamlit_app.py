@@ -61,7 +61,7 @@ try:
     
     my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
     
-    countries_to_show = my_country_list_all.loc[countries_selected]
-    streamlit.dataframe(countries_to_show)
+    countries_to_show2 = my_country_list_all.loc[countries_selected]
+    streamlit.dataframe(countries_to_show2)
 except URLError as e:
     streamlit.error()
