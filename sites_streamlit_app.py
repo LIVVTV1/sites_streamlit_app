@@ -55,7 +55,7 @@ try:
    
     country_dict=json.loads(countries_json)
     # output in the screen as a table
-    streamlit.dataframe(country_dict)
+    streamlit.print(country_dict)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
