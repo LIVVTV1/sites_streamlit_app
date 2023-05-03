@@ -53,7 +53,7 @@ try:
     #country_normalized = pandas.json_normalize(countries_json.json())
    
     # output in the screen as a table
-    streamlit.dataframe(country_normalized)
+    streamlit.dataframe(countries_json)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
