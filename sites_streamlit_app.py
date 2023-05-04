@@ -55,7 +55,7 @@ try:
 
     #country_normalized = pandas.json_normalize(countries_json['sites'])
     data = countries_json
-    country_normalized = pandas.json_normalize(data['sites'], record_path="./Countries-Europe_complete.json", max_level=2)
+    country_normalized = pandas.json_normalize(data[1], record_path="./Countries-Europe_complete.json", max_level=2)
    
  
     # output in the screen as a table
