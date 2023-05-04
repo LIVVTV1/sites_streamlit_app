@@ -60,7 +60,7 @@ try:
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
-    streamlit.dataframe(country_normalized)
+    #streamlit.dataframe(country_normalized)
     st.json({
     'fruit':'apple',
     'book': 'maths',
