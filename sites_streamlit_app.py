@@ -56,7 +56,7 @@ try:
     data = countries_json
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     #country_normalized = pandas.json_normalize(data, record_path=['sites'])
-    country_normalized=data.json(body, *, expanded=True)
+    country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
     streamlit.dataframe(country_normalized)
