@@ -48,7 +48,7 @@ try:
     #import requests
     #country_response = requests.get("./Countries-Europe_complete.json" + country_choice)
     countries_json=pandas.read_json("./Countries-Europe_complete.json",encoding='utf-8')
-    countries_json.json(body, *, expanded=True)
+    #countries_json.json(body, *, expanded=True)
     
     #take the json version of the response and normalize it
    
