@@ -113,8 +113,8 @@ try:
    "best_dish": "karelian pastry"
  }
 ]
-    dic_flattened = [flatten(d) for d in dic]
-    df = pandas.DataFrame(dic_flattened)
+
+    df=json_normalize(dic)
     
     # output in the screen as a table
     streamlit.dataframe(df)
