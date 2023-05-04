@@ -54,6 +54,7 @@ try:
    
 
     #country_normalized = pandas.json_normalize(countries_json['sites'])
+    data = countries_json
     country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", max_level=1)
    
  
