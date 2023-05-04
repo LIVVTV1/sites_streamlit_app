@@ -108,11 +108,11 @@ try:
 ]
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     #country_normalized = pandas.json_normalize(data, meta = "./Countries-Europe_complete.json", sep= ',', max_level=1)
-    pandas.json_normalize(data)
+    country_normalized=pandas.json_normalize(data)
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
-    #streamlit.dataframe(country_normalized)
+    streamlit.dataframe(country_normalized)
     
     
     #back_from_function=get_country_data(country_choice)
