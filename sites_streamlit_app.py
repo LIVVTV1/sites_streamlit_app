@@ -56,19 +56,12 @@ try:
     
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     #country_normalized = pandas.json_normalize(data, meta = "./Countries-Europe_complete.json", sep= ',', max_level=1)
-    #country_normalized=pandas.json_normalize(countries_json, max_level=1)
+    country_normalized=pandas.json_normalize(countries_json, max_level=1)
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
-    #streamlit.dataframe(country_normalized)
-    '''
-    streamlit.json({
-    'fruit':'apple',
-    'book': 'maths',
-    'game' : 'football'
-    })
-    '''
-    streamlit.write(countries_json)
+    streamlit.dataframe(country_normalized)
+
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
