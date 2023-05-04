@@ -53,7 +53,7 @@ try:
    
 
     #country_normalized = pandas.json_normalize(countries_json['sites'][0])
-    #data = countries_json
+    data = countries_json
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     country_normalized = pandas.json_normalize(data, record_path=['sites'])
  
