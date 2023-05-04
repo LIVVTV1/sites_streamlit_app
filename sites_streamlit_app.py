@@ -113,7 +113,7 @@ try:
  }
 ]
 
-    df=json_normalize(dic)
+    df=pandas.json_normalize(dic)
     
     # output in the screen as a table
     streamlit.dataframe(df)
