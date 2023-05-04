@@ -45,17 +45,16 @@ try:
   if not country_choice:
     streamlit.error("Please select a country to get information.")
   else:
-    #import requests
-    #country_response = requests.get("./Countries-Europe_complete.json" + country_choice)
+    
     countries_json=pandas.read_json("./Countries-Europe_complete.json",encoding='utf-8')
     #countries_json.json(body, *, expanded=True)
     
     #take the json version of the response and normalize it
    
 
-    #country_normalized = pandas.json_normalize(countries_json['sites'])
-    data = countries_json
-    country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
+    country_normalized = pandas.json_normalize(countries_json['sites'])
+    #data = countries_json
+    #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
    
  
     # output in the screen as a table
