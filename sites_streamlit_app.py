@@ -63,7 +63,7 @@ try:
     for item in countries_json:
      df_skel.append(item[0])
 
-    dataset = pd.DataFrame(df_skel)
+    dataset = pandas.DataFrame(df_skel)
     
     # output in the screen as a table
     streamlit.dataframe(dataset)
