@@ -52,8 +52,9 @@ try:
     
     #take the json version of the response and normalize it
    
-    country_normalized = pandas.json_normalize(countries_json['country'])
-    
+
+    #country_normalized = pandas.json_normalize(countries_json['sites'])
+    country_normalized = pandas.json_normalize(countries_json,max_level=0)
    
  
     # output in the screen as a table
