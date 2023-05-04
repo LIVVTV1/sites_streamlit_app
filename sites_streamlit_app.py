@@ -47,73 +47,25 @@ try:
   else:
     
     countries_json=pandas.read_json("./Countries-Europe_complete.json")
-    #countries_json.json(body, *, expanded=True)
     
     #take the json version of the response and normalize it
    
 
     #country_normalized = pandas.json_normalize(countries_json['sites'][0])
     #data = countries_json
-    data = [
- {
-   "name": "Ukraine",
-   "country": "UA",
-   "continent": "eu",
-   "sites": [
-    "Bukovel",
-    "Rakhiv",
-    "Odessa"
-  ],
-   "best_dish": "borscht"
- },
- {
-   "name": "France",
-   "country": "FR",
-   "continent": "eu",
-   "sites": [
-    "Paris",
-    "Monaco",
-    "Monte Carlo"
-  ],
-   "best_dish": "cassoulet"
- },
- {
-   "name": "Spain",
-   "country": "ES",
-   "continent": "eu",
-   "sites": "Barcelona",
-   "best_dish": "paella"
- },
- {
-   "name": "Sweden",
-   "country": "SE",
-   "continent": "eu",
-   "sites": "Stockholm",
-   "best_dish": "meatballs"
- },
- {
-   "name": "Germany",
-   "country": "DE",
-   "continent": "eu",
-   "sites": "Munchen",
-   "best_dish": "sauerbraten"
- },
- {
-   "name": "Finland",
-   "country": "FIN",
-   "continent": "eu",
-   "sites": "Helsinki",
-   "best_dish": "karelian pastry"
- }
-]
+    
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     #country_normalized = pandas.json_normalize(data, meta = "./Countries-Europe_complete.json", sep= ',', max_level=1)
-    country_normalized=pandas.json_normalize(data, max_level=1)
+    country_normalized=pandas.json_normalize(countries_json, max_level=1)
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
     streamlit.dataframe(country_normalized)
-    
+    st.json({
+    'fruit':'apple',
+    'book': 'maths',
+    'game' : 'football'
+})
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
