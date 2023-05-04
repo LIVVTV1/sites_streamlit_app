@@ -46,7 +46,7 @@ try:
     streamlit.error("Please select a country to get information.")
   else:
     
-    countries_json=pandas.read_json("./Countries-Europe_complete.json",encoding='utf-8')
+    countries_json=pandas.read_json("./Countries-Europe_complete.json")
     #countries_json.json(body, *, expanded=True)
     
     #take the json version of the response and normalize it
@@ -55,11 +55,11 @@ try:
     #country_normalized = pandas.json_normalize(countries_json['sites'][0])
     data = countries_json
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
-    #country_normalized = pandas.json_normalize(data, record_path=['sites'])
+    country_normalized = pandas.json_normalize(data, max_level=1)
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
-    streamlit.dataframe(countries_json)
+    streamlit.dataframe(country_normalized)
     
     
     #back_from_function=get_country_data(country_choice)
