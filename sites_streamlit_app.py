@@ -4,7 +4,6 @@ import requests
 import snowflake.connector
 import json
 from urllib.error import URLError
-from pandas.io.json import json_normalize
 
 streamlit.title('Best sites to visit')
 streamlit.header('Travel objectives')
