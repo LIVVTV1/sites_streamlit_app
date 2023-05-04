@@ -52,7 +52,7 @@ try:
     
     #take the json version of the response and normalize it
    
-    country_normalized = pandas.json_normalize(countries_json['sites'])
+    country_normalized = pandas.json_normalize(countries_json['name'])
     
    
  
@@ -64,7 +64,7 @@ try:
     
     # OK my_country_list_all=pandas.read_csv("./Countries-Europe_complete.csv",encoding='utf-8')
     # OK my_country_list_all=my_country_list_all.set_index('name')
-    # OKcountries_to_show2 = my_country_list_all.loc[country_choice
+    # OKcountries_to_show2 = my_country_list_all.loc[country_choice]
     
     # OK streamlit.dataframe(countries_to_show2)
 except URLError as e:
