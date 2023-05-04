@@ -55,18 +55,68 @@ try:
     #data = countries_json
     
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ';')
-    #country_normalized = pandas.json_normalize(data, meta = f"""{./}Countries-Europe_complete.json""", sep= ';', max_level=1)
+    #country_normalized = pandas.json_normalize(data, meta = f"""{./}Countries-Europe_complete.json""", sep= ';')
    
     #country_normalized=pandas.json_normalize(countries_json, max_level=1)
     #country_normalized=data.json(body, expanded=True)
-    df_skel = list()
-    for item in countries_json:
-     df_skel.append(item[0])
 
-    dataset = pandas.DataFrame(df_skel)
+    dic= [
+ {
+   "name": "Ukraine",
+   "country": "UA",
+   "continent": "eu",
+   "sites": [
+    "Bukovel",
+    "Rakhiv",
+    "Odessa"
+  ],
+   "best_dish": "borscht"
+ },
+ {
+   "name": "France",
+   "country": "FR",
+   "continent": "eu",
+   "sites": [
+    "Paris",
+    "Monaco",
+    "Monte Carlo"
+  ],
+   "best_dish": "cassoulet"
+ },
+ {
+   "name": "Spain",
+   "country": "ES",
+   "continent": "eu",
+   "sites": "Barcelona",
+   "best_dish": "paella"
+ },
+ {
+   "name": "Sweden",
+   "country": "SE",
+   "continent": "eu",
+   "sites": "Stockholm",
+   "best_dish": "meatballs"
+ },
+ {
+   "name": "Germany",
+   "country": "DE",
+   "continent": "eu",
+   "sites": "Munchen",
+   "best_dish": "sauerbraten"
+ },
+ {
+   "name": "Finland",
+   "country": "FIN",
+   "continent": "eu",
+   "sites": "Helsinki",
+   "best_dish": "karelian pastry"
+ }
+]
+    dic_flattened = [flatten(d) for d in dic]
+    df = pandas.DataFrame(dic_flattened)
     
     # output in the screen as a table
-    streamlit.dataframe(dataset)
+    streamlit.dataframe(df)
 
     
     #back_from_function=get_country_data(country_choice)
