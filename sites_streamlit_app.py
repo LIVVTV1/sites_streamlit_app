@@ -68,7 +68,7 @@ try:
     'game' : 'football'
     })
     '''
-    streamlit.json(countries_json)
+    streamlit.write(countries_json)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
