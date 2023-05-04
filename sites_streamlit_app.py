@@ -65,22 +65,14 @@ try:
    "name": "Ukraine",
    "country": "UA",
    "continent": "eu",
-   "sites": [
-    "Bukovel",
-    "Rakhiv",
-    "Odessa"
-  ],
+   "sites": "Bukovel",
    "best_dish": "borscht"
  },
  {
    "name": "France",
    "country": "FR",
    "continent": "eu",
-   "sites": [
-    "Paris",
-    "Monaco",
-    "Monte Carlo"
-  ],
+   "sites": "Paris",
    "best_dish": "cassoulet"
  },
  {
