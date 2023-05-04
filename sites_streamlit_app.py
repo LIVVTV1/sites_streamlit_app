@@ -61,11 +61,14 @@ try:
  
     # output in the screen as a table
     #streamlit.dataframe(country_normalized)
+    '''
     streamlit.json({
     'fruit':'apple',
     'book': 'maths',
     'game' : 'football'
     })
+    '''
+    streamlit.json(countries_json)
     
     #back_from_function=get_country_data(country_choice)
     #streamlit.dataframe(back_from_function)
