@@ -61,7 +61,7 @@ try:
     #country_normalized=data.json(body, expanded=True)
     df_skel = list()
     for item in countries_json:
-    df_skel.append(item[0])
+     df_skel.append(item[0])
 
     dataset = pd.DataFrame(df_skel)
     
