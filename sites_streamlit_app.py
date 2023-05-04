@@ -108,7 +108,7 @@ try:
 ]
     #country_normalized = pandas.json_normalize(data, record_path="./Countries-Europe_complete.json", sep= ',')
     #country_normalized = pandas.json_normalize(data, meta = "./Countries-Europe_complete.json", sep= ',', max_level=1)
-    country_normalized=pandas.json_normalize(data,sep= ',', max_level=1)
+    country_normalized=pandas.json_normalize(data, max_level=1)
     #country_normalized=data.json(body, expanded=True)
  
     # output in the screen as a table
