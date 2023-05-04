@@ -4,6 +4,7 @@ import requests
 import snowflake.connector
 import json
 from urllib.error import URLError
+import flatten
 
 streamlit.title('Best sites to visit')
 streamlit.header('Travel objectives')
