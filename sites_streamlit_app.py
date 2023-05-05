@@ -40,6 +40,25 @@ streamlit.dataframe(countries_to_show)
   
 
 streamlit.header("Travel Destination Advice!")
+
+    def flatten_json(y):
+      out = {}
+
+      def flatten(x, name=''):
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + a + '_')
+        elif type(x) is list:
+            i = 0
+            for a in x:
+                flatten(a, name + str(i) + '_')
+                i += 1
+        else:
+            out[name[:-1]] = x
+
+      flatten(y)
+      return out
+    
 try:
   country_choice = streamlit.text_input('What country would you like information about?')
   if not country_choice:
@@ -115,27 +134,11 @@ try:
     #streamlit.dataframe(countries_to_show2)
     
     
-    def flatten_json(y):
-      out = {}
 
-      def flatten(x, name=''):
-        if type(x) is dict:
-            for a in x:
-                flatten(x[a], name + a + '_')
-        elif type(x) is list:
-            i = 0
-            for a in x:
-                flatten(a, name + str(i) + '_')
-                i += 1
-        else:
-            out[name[:-1]] = x
+  
+    flat = flatten_json(dic)
+    pandas.json_normalize(flat)
 
-      flatten(y)
-      return out
-  
-  flat = flatten_json(dic)
-  pandas.json_normalize(flat)
-  
 
     
     #back_from_function=get_country_data(country_choice)
