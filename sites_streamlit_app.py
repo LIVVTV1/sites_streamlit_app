@@ -133,8 +133,8 @@ try:
       flatten(y)
       return out
   
-     flat = flatten_json(dic)
-     json_normalize(flat)
+  flat = flatten_json(dic)
+  json_normalize(flat)
   
 
     
