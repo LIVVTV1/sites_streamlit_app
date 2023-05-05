@@ -72,7 +72,11 @@ try:
    "name": "France",
    "country": "FR",
    "continent": "eu",
-   "sites": "Paris",
+   "sites": [
+      "Paris",
+      "Monaco",
+      "Monte Carlo"
+  ],
    "best_dish": "cassoulet"
  },
  {
@@ -112,9 +116,9 @@ try:
     
     
     def flatten_json(y):
-    out = {}
+      out = {}
 
-    def flatten(x, name=''):
+      def flatten(x, name=''):
         if type(x) is dict:
             for a in x:
                 flatten(x[a], name + a + '_')
@@ -126,8 +130,8 @@ try:
         else:
             out[name[:-1]] = x
 
-    flatten(y)
-    return out
+      flatten(y)
+      return out
   
    flat = flatten_json(dic)
    json_normalize(flat)
