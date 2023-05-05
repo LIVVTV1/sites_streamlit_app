@@ -138,8 +138,7 @@ try:
   
     flat = flatten_json(dic)
     df = pandas.json_normalize(flat)
-    countries_to_show2 =df.loc[country_choice]
-    streamlit.dataframe(countries_to_show2)
+    streamlit.dataframe(df)
 
     
     #back_from_function=get_country_data(country_choice)
