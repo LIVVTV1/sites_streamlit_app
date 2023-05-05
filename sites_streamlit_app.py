@@ -134,7 +134,7 @@ try:
       return out
   
   flat = flatten_json(dic)
-  json_normalize(flat)
+  pandas.json_normalize(flat)
   
 
     
