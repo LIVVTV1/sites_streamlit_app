@@ -41,10 +41,10 @@ streamlit.dataframe(countries_to_show)
 
 streamlit.header("Travel Destination Advice!")
 
-    def flatten_json(y):
-      out = {}
+def flatten_json(y):
+    out = {}
 
-      def flatten(x, name=''):
+    def flatten(x, name=''):
         if type(x) is dict:
             for a in x:
                 flatten(x[a], name + a + '_')
@@ -56,8 +56,8 @@ streamlit.header("Travel Destination Advice!")
         else:
             out[name[:-1]] = x
 
-      flatten(y)
-      return out
+    flatten(y)
+    return out
     
 try:
   country_choice = streamlit.text_input('What country would you like information about?')
